@@ -1,0 +1,538 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Inverter Sensor Dashboard",
+    "timezone": "browser",
+    "panels": [
+      {
+        "type": "row",
+        "title": "PV Inputs",
+        "gridPos": {
+          "x": 0,
+          "y": 0,
+          "w": 24,
+          "h": 1
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "PV1 Voltage (V)",
+        "targets": [
+          {
+            "refId": "A",
+            "datasource": "InfluxDB",
+            "measurement": "vpv1",
+            "field": "volt"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 1,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "PV1 Current (A)",
+        "targets": [
+          {
+            "refId": "B",
+            "datasource": "InfluxDB",
+            "measurement": "ipv1",
+            "field": "ampere"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 1,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "PV1 Power (W)",
+        "targets": [
+          {
+            "refId": "C",
+            "datasource": "InfluxDB",
+            "measurement": "ppv1",
+            "field": "watt"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 9,
+          "w": 24,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "PV2 Voltage (V)",
+        "targets": [
+          {
+            "refId": "D",
+            "datasource": "InfluxDB",
+            "measurement": "vpv2",
+            "field": "volt"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 17,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "PV2 Current (A)",
+        "targets": [
+          {
+            "refId": "E",
+            "datasource": "InfluxDB",
+            "measurement": "ipv2",
+            "field": "ampere"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 17,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "PV2 Power (W)",
+        "targets": [
+          {
+            "refId": "F",
+            "datasource": "InfluxDB",
+            "measurement": "ppv2",
+            "field": "watt"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 25,
+          "w": 24,
+          "h": 8
+        }
+      },
+      {
+        "type": "row",
+        "title": "Grid Parameters",
+        "gridPos": {
+          "x": 0,
+          "y": 33,
+          "w": 24,
+          "h": 1
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Line Voltage (V)",
+        "targets": [
+          {
+            "refId": "G",
+            "datasource": "InfluxDB",
+            "measurement": "vline1",
+            "field": "volt"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 34,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Grid Voltage (V)",
+        "targets": [
+          {
+            "refId": "H",
+            "datasource": "InfluxDB",
+            "measurement": "vgrid1",
+            "field": "volt"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 34,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Grid Current (A)",
+        "targets": [
+          {
+            "refId": "I",
+            "datasource": "InfluxDB",
+            "measurement": "igrid1",
+            "field": "ampere"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 42,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Grid Frequency (Hz)",
+        "targets": [
+          {
+            "refId": "J",
+            "datasource": "InfluxDB",
+            "measurement": "fgrid1",
+            "field": "hz"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 42,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Grid Power (W)",
+        "targets": [
+          {
+            "refId": "K",
+            "datasource": "InfluxDB",
+            "measurement": "pgrid1",
+            "field": "watt"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 50,
+          "w": 24,
+          "h": 8
+        }
+      },
+      {
+        "type": "row",
+        "title": "Battery Parameters",
+        "gridPos": {
+          "x": 0,
+          "y": 58,
+          "w": 24,
+          "h": 1
+        }
+      },
+      {
+        "type": "gauge",
+        "title": "Battery State of Charge (%)",
+        "targets": [
+          {
+            "refId": "L",
+            "datasource": "InfluxDB",
+            "measurement": "battery_soc",
+            "field": "percent"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 59,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "gauge",
+        "title": "Battery State of Health (%)",
+        "targets": [
+          {
+            "refId": "M",
+            "datasource": "InfluxDB",
+            "measurement": "battery_soh",
+            "field": "percent"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 59,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Battery Temperature (°C)",
+        "targets": [
+          {
+            "refId": "N",
+            "datasource": "InfluxDB",
+            "measurement": "battery_temperature",
+            "field": "degrees"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 67,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Battery Charge Limit (A)",
+        "targets": [
+          {
+            "refId": "O",
+            "datasource": "InfluxDB",
+            "measurement": "battery_charge_limit",
+            "field": "ampere"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 67,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Battery Discharge Limit (A)",
+        "targets": [
+          {
+            "refId": "P",
+            "datasource": "InfluxDB",
+            "measurement": "battery_discharge_limit",
+            "field": "ampere"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 75,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Battery Power (W)",
+        "targets": [
+          {
+            "refId": "Q",
+            "datasource": "InfluxDB",
+            "measurement": "battery_index",
+            "field": "watt"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 75,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "row",
+        "title": "Energy Statistics",
+        "gridPos": {
+          "x": 0,
+          "y": 83,
+          "w": 24,
+          "h": 1
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Total Energy Generated (kWh)",
+        "targets": [
+          {
+            "refId": "R",
+            "datasource": "InfluxDB",
+            "measurement": "e_total",
+            "field": "kwh"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 84,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Energy Generated Today (kWh)",
+        "targets": [
+          {
+            "refId": "S",
+            "datasource": "InfluxDB",
+            "measurement": "e_day",
+            "field": "kwh"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 84,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Total Load Consumption (kWh)",
+        "targets": [
+          {
+            "refId": "T",
+            "datasource": "InfluxDB",
+            "measurement": "e_load_total",
+            "field": "kwh"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 92,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Load Consumption Today (kWh)",
+        "targets": [
+          {
+            "refId": "U",
+            "datasource": "InfluxDB",
+            "measurement": "e_load_day",
+            "field": "kwh"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 92,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Battery Charge Today (kWh)",
+        "targets": [
+          {
+            "refId": "V",
+            "datasource": "InfluxDB",
+            "measurement": "e_bat_charge_day",
+            "field": "kwh"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 100,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Battery Discharge Today (kWh)",
+        "targets": [
+          {
+            "refId": "W",
+            "datasource": "InfluxDB",
+            "measurement": "e_bat_discharge_day",
+            "field": "kwh"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 100,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Battery Charge Total (kWh)",
+        "targets": [
+          {
+            "refId": "X",
+            "datasource": "InfluxDB",
+            "measurement": "e_bat_charge_total",
+            "field": "kwh"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 108,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Battery Discharge Total (kWh)",
+        "targets": [
+          {
+            "refId": "Y",
+            "datasource": "InfluxDB",
+            "measurement": "e_bat_discharge_total",
+            "field": "kwh"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 108,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Total Load Power (W)",
+        "targets": [
+          {
+            "refId": "Z",
+            "datasource": "InfluxDB",
+            "measurement": "load_ptotal",
+            "field": "watt"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 116,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "House Consumption (W)",
+        "targets": [
+          {
+            "refId": "AA",
+            "datasource": "InfluxDB",
+            "measurement": "house_consumption",
+            "field": "watt"
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 116,
+          "w": 12,
+          "h": 8
+        }
+      }
+    ],
+    "schemaVersion": 36,
+    "version": 1
+  },
+  "overwrite": false
+}
